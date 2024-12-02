@@ -1,0 +1,10 @@
+Anahita_lab1/wordpress/*
+
+!Anahita_lab1/wordpress/wp-content/
+
+Anahita_lab1/wordpress/wp-content/*
+!Anahita_lab1/wordpress/wp-content/themes/
+
+Anahita_lab1/wordpress/wp-content/themes/*
+
+!Anahita_lab1/wordpress/wp-content/themes/Anahita_labration1/
