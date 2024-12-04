@@ -31,8 +31,8 @@
             <i class="fa fa-calendar"></i><?php echo the_date() ?>
            </li>
            <li>
-            <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson"
-             rel="author"><?php the_author()?></a></a>
+                <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson"
+                    rel="author"><?php the_author()?></a></a>
            </li>
            <li>
             <i class="fa fa-tag"></i><?php echo the_category(', ')?>
@@ -53,8 +53,6 @@
         <a class="page-numbers" href="">2</a>
         <a class="next page-numbers" href="">Nästa</a>
        </nav>
-
-
       </div>
       <?php get_sidebar(); ?>
      </div>

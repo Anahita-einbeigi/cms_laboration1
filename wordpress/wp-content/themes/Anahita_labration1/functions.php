@@ -14,17 +14,20 @@ function my_theme_setup()
 }
 add_action('after_setup_theme', 'my_theme_setup');
 
-// Register Menus
+// Menus
 function register_my_menus()
 {
     register_nav_menus([
         'header-menu' => 'Header Menu',
         'footer-menu' => 'Footer Menu',
+        'sidebar' => __('Sidebar Menu'),
     ]);
 }
 add_action('init', 'register_my_menus');
 
-// Enqueue Styles and Scripts
+
+
+// Styles and Scripts
 function load_theme_styles()
 {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
@@ -36,7 +39,6 @@ add_action('wp_enqueue_scripts', 'load_theme_styles');
 
 function mytheme_register_sidebars()
 {
-    // Footer Sidebars
     $footers = [
         'footer-about' => 'Footer Om oss',
         'footer-contact' => 'Footer Kontakt',
@@ -66,3 +68,6 @@ function mytheme_register_sidebars()
 }
 
 add_action('widgets_init', 'mytheme_register_sidebars');
+
+
+  

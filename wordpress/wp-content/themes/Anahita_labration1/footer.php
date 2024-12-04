@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row top">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <h4><?php echo esc_html__('Om oss', 'your-theme'); ?></h4>
+                <h4><?php echo esc_html__('Kort om oss', 'your-theme'); ?></h4>
                 <div>
                     <?php if (is_active_sidebar('footer-about')) : ?>
                         <?php dynamic_sidebar('footer-about'); ?>
