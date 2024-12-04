@@ -1,6 +1,6 @@
 <aside id="sidebar" class="col-xs-12 col-md-3">
   
-  <div class="widget">
+  <div class="widget widget_search">
     <h2>Sök efter:</h2>
     <?php get_search_form(); ?>
   </div>

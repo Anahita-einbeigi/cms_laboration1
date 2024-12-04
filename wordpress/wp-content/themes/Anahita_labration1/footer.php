@@ -1,46 +1,54 @@
 <footer id="footer">
     <div class="container">
         <div class="row top">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <h4><?php echo esc_html__('Kort om oss', 'your-theme'); ?></h4>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+                <h4><?php echo 'Kort om oss'; ?></h4>
                 <div>
-                    <?php if (is_active_sidebar('footer-about')) : ?>
-                        <?php dynamic_sidebar('footer-about'); ?>
-                    <?php else: ?>
-                        <p><?php echo esc_html__('Lägg till något om ditt företag här.', 'your-theme'); ?></p>
-                    <?php endif; ?>
+                    <p>
+                        <?php echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed sodales mauris. Aliquam felis est, efficitur vel fringilla quis, vehicula quis ex.'; ?>
+                    </p>
+                    <p>
+                        <?php echo 'Phasellus tristique nunc in leo faucibus, a consequat nulla sagittis.'; ?>
+                    </p>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
-                <h4><?php echo esc_html__('Kontaktuppgifter', 'your-theme'); ?></h4>
+                <h4><?php echo 'Kontaktuppgifter'; ?></h4>
                 <div>
-                    <?php if (is_active_sidebar('footer-contact')) : ?>
-                        <?php dynamic_sidebar('footer-contact'); ?>
-                    <?php else: ?>
-                        <p><?php echo esc_html__('Lägg till dina kontaktuppgifter här.', 'your-theme'); ?></p>
-                    <?php endif; ?>
-                </div>
+                    <p><strong><?php echo 'The Company'; ?></strong></p>
+                    <p><?php echo 'Gatgatan 1'; ?></p>
+                    <p><?php echo '123 45 Någonstans'; ?></p>
+                    <p><?php echo 'Tel: 0123456789'; ?></p>
+                    <p><?php echo 'E-post: '; ?><a href="mailto:info@thecompany.com"><?php echo 'info@thecompany.com'; ?></a></p>
+                    </div>
             </div>
 
             <div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
-                <h4><?php echo esc_html__('Social media', 'your-theme'); ?></h4>
+                <h4>Social Media</h4>
                 <div>
-                    <?php if (is_active_sidebar('footer-social')) : ?>
-                        <?php dynamic_sidebar('footer-social'); ?>
-                    <?php else: ?>
-                        <ul class="social">
-                            <li><i class="fa fa-facebook"></i> <a href="#">Facebook</a></li>
-                            <li><i class="fa fa-twitter"></i> <a href="#">Twitter</a></li>
-                            <li><i class="fa fa-instagram"></i> <a href="#">Instagram</a></li>
-                            <li><i class="fa fa-linkedin"></i> <a href="#">LinkedIn</a></li>
-                        </ul>
-                    <?php endif; ?>
+                    <ul class="social">
+                        <?php
+                        $social_links = array(
+                            'facebook'  => 'https://www.facebook.com',    
+                            'twitter'   => 'https://twitter.com/',          
+                            'instagram' => 'https://www.instagram.com/',  
+                            'linkedin'  => 'https://www.linkedin.com/',  
+                        );
+
+                        foreach ($social_links as $key => $url) :
+                            if ($url) : 
+                        ?>
+                                <li><i class="fa fa-<?php echo $key; ?>"></i> <a href="<?php echo esc_url($url); ?>" target="_blank"><?php echo ucfirst($key); ?></a></li>
+                        <?php
+                            endif;
+                        endforeach;
+                        ?>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Footer Copyright -->
         <div class="row bottom">
             <div class="col-xs-12">
                 <p>Copyright &copy; <?php echo date('Y'); ?> <?php echo esc_html__('Grupp X', 'your-theme'); ?></p>
