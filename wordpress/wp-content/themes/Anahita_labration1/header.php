@@ -2,20 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-8 col-sm-6">
-                <a class="logo" href="<?php echo home_url(); ?>"> 
+                <a class="logo" href="<?php echo home_url(); ?>">
                     <?php bloginfo('name'); ?>
                 </a>
             </div>
-
-            <!-- Sökformulär -->
             <div class="col-sm-6 hidden-xs">
-                <form class="searchform" action="<?php echo home_url('/'); ?>" method="get">
-                    <div>
-                        <label class="screen-reader-text" for="s"><?php echo 'Sök efter:'; ?></label> 
-                        <input type="text" name="s" id="s" value="" /> 
-                        <input type="submit" value="Sök" />
-                    </div>
-                </form>
+                <?php get_search_form(); ?>
             </div>
 
             <div class="col-xs-4 text-right visible-xs">
@@ -28,15 +20,8 @@
     </div>
 </header>
 
-<!-- Mobil-->
 <div class="mobile-search">
-    <form class="searchform" action="<?php echo home_url('/'); ?>" method="get">
-        <div>
-            <label class="screen-reader-text" for="s"><?php echo 'Sök efter:'; ?></label>
-            <input type="text" name="s" id="s" value="" />
-            <input type="submit" value="Sök" />
-        </div>
-    </form>
+    <?php get_search_form(); ?>
 </div>
 
 <nav id="nav">
