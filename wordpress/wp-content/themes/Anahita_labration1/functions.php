@@ -38,26 +38,9 @@ function load_theme_styles()
 }
 add_action('wp_enqueue_scripts', 'load_theme_styles');
 
+// Main Sidebar
 function mytheme_register_sidebars()
 {
-    $footers = [
-        'footer-about' => 'Footer Om oss',
-        'footer-contact' => 'Footer Kontakt',
-        'footer-social' => 'Footer Social Media',
-    ];
-
-    foreach ($footers as $id => $name) {
-        register_sidebar([
-            'name'          => $name,
-            'id'            => $id,
-            'before_widget' => "<div class='footer-widget-$id'>",
-            'after_widget'  => '</div>',
-            'before_title'  => '<h4>',
-            'after_title'   => '</h4>',
-        ]);
-    }
-
-    // Main Sidebar
     register_sidebar([
         'name'          => __('Main Sidebar', 'your-theme'),
         'id'            => 'main-sidebar',
@@ -69,6 +52,7 @@ function mytheme_register_sidebars()
 }
 
 add_action('widgets_init', 'mytheme_register_sidebars');
+
 
 function my_theme_widgets_init() {
     register_sidebar( array(
