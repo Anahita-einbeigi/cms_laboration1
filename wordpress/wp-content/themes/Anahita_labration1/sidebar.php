@@ -1,66 +1,47 @@
-<aside id="sidebar" class="col-xs-12 col-md-3">
-  
-  <div class="widget widget_search ">
-    <h2>Sök efter:</h2>
-    <?php get_search_form(); ?>
-  </div>
+<aside class="col-xs-12 col-md-3">
+    <div id="sidebar">
+        <ul>
+            <label>Sök efter:</label>
+            <li id="search-2" class="widget widget_search">
+                <?php get_search_form(); ?>
+            </li>
+        </ul>
 
-  <div class="widget">
-    <h2>Sidor</h2>
-    <?php
-    wp_nav_menu([ 
-      'theme_location' => 'sidebar', 
-      'container' => false, 
-      'menu_class' => 'sidebar-menu',
-    ]);
-    ?>
-  </div>
+        <ul role="navigation">
+            <li class="widget">
+                <h2>Sidor</h2>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'sidebar', 
+                    'container' => false,
+                    'menu_class' => 'sidebar-menu',
+                ]);
+                ?>
+            </li>
 
-  <div class="widget">
-    <h2>Arkiv</h2>
-    <ul>
-      <?php
-      if (have_posts()) :
-        $current_month = '';
-        while (have_posts()) : the_post();
-          $post_date = get_the_date('F Y'); 
+            <li class="widget">
+                <h2>Arkiv</h2>
+                <ul>
+                    <?php
+                    wp_get_archives(array(
+                        'type' => 'monthly',
+                        'show_post_count' => false,
+                    ));
+                    ?>
+                </ul>
+            </li>
 
-          if ($post_date !== $current_month) :
-            $current_month = $post_date;
-            echo '<li><a href="#">' . $post_date . '</a></li>'; 
-          endif;
-        endwhile;
-      else :
-        echo '<li>Inga arkiv hittades.</li>';
-      endif;
-      ?>
-    </ul>
-  </div>
-
-  <div class="widget">
-  <h2>Kategorier</h2>
-  <ul>
-    <?php
-    $category_counts = array();
-
-    if (have_posts()) :
-      while (have_posts()) : the_post();
-        $categories = get_the_category_list(', ');
-        if ($categories) :
-          $category_ids = get_the_category();
-          foreach ($category_ids as $category) :
-            $category_counts[$category->term_id] = isset($category_counts[$category->term_id]) ? $category_counts[$category->term_id] + 1 : 1;
-          endforeach;
-        endif;
-      endwhile;
-
-      foreach ($category_counts as $category_id => $count) :
-        $category = get_category($category_id); 
-        echo '<li><a href="' . home_url('/category/' . $category->slug) . '">' . esc_html($category->name) . ' (' . $count . ')</a></li>';
-      endforeach;
-    endif;
-    ?>
-  </ul>
-</div>
-
+            <li id="categories-2" class="widget widget_categories">
+                <h2 class="widgettitle">Kategorier</h2>
+                <ul>
+                    <?php
+                    wp_list_categories(array(
+                        'title_li' => '', 
+                        'show_count' => true, 
+                    ));
+                    ?>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </aside>
