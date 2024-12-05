@@ -32,7 +32,7 @@
            </li>
            <li>
                 <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson"
-                    rel="author"><?php the_author()?></a></a>
+                    rel="author"><?php echo get_the_author_posts_link()?></a></a>
            </li>
            <li>
             <i class="fa fa-tag"></i><?php echo the_category(', ')?>

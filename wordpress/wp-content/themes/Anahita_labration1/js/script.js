@@ -6,7 +6,7 @@
 		$(this).toggleClass('fa-bars fa-close');
 		$('#nav').slideToggle();
 	});
-
+	
 	// Search icon
 
 	$('.fa-search').click(function(){

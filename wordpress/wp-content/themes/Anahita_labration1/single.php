@@ -23,7 +23,7 @@
          <article>
           <img src="<?php the_post_thumbnail_url('785x523'); ?>" />
           <h2 class="title">
-           <a href="<?php the_permalink(); ?>"><?php echo get_the_title()?></a>
+           <a href="<?php the_permalink(); ?>"><?php echo the_title()?></a>
           </h2>
           <ul class="meta">
            <li>
@@ -31,7 +31,7 @@
            </li>
            <li>
             <i class="fa fa-user"></i> <a href="forfattare.html" title="Inlägg av Anders Andersson"
-             rel="author"><?php the_author()?></a></a>
+             rel="author"><?php echo get_the_author_posts_link()?></a></a>
            </li>
            <li>
             <i class="fa fa-tag"></i><?php echo the_category(', ')?>

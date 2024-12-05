@@ -1,7 +1,7 @@
 <footer id="footer">
     <div class="container">
         <div class="row top">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <h4><?php echo 'Kort om oss'; ?></h4>
                 <div>
                     <p>
@@ -21,7 +21,7 @@
                     <p><?php echo '123 45 Någonstans'; ?></p>
                     <p><?php echo 'Tel: 0123456789'; ?></p>
                     <p><?php echo 'E-post: '; ?><a href="mailto:info@thecompany.com"><?php echo 'info@thecompany.com'; ?></a></p>
-                    </div>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
@@ -56,3 +56,7 @@
         </div>
     </div>
 </footer>
+
+<?php wp_footer(); ?>
+</body>
+</html>
