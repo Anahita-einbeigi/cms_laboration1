@@ -48,11 +48,21 @@
        <?php endif;
        ?>
        <nav class="navigation pagination" aria-label="Sidonumrering för inlägg">
-        <h2 class="screen-reader-text">Sidonumrering för inlägg</h2>
-        <span aria-current="page" class="page-numbers current">1</span>
-        <a class="page-numbers" href="">2</a>
-        <a class="next page-numbers" href="">Nästa</a>
-       </nav>
+            <h2 class="screen-reader-text"></h2>
+            <?php
+            global $wp_query;
+            echo paginate_links( array(
+                'base'      => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                'format'    => '?paged=%#%',
+                'current'   => max(1, get_query_var('paged')),
+                'total'     => $wp_query->max_num_pages,
+                'prev_text' => '',
+                'next_text' => '<span class="next page-numbers">Nästa</span>',
+                'before_page_number' => '<span class="page-numbers">',
+                'after_page_number'  => '</span>',
+            ) );
+            ?>
+        </nav>
       </div>
       <?php get_sidebar(); ?>
      </div>
